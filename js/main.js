@@ -51,6 +51,8 @@ let userMessage = document.getElementById("message").value;
 finalPrice = getFinalPrice(); 
 console.log("Il prezzo finale è: "+finalPrice); 
 
+document.getElementById("price").innerHTML = finalPrice; 
+
 
 
 
@@ -59,7 +61,8 @@ console.log("Il prezzo finale è: "+finalPrice);
 function getFinalPrice()
 {
 
-let isAValidDiscountCode = discountCodes.includes(userDiscountCode)
+let isAValidDiscountCode = discountCodes.includes(userDiscountCode);
+let buttonColor = "btn-warning"
 
 if(typeOfWorkUserSelected == "1")
     finalPrice = priceBackEndPerHour*userWorkingHours; 
@@ -82,15 +85,15 @@ else
 {
 
 console.log("Mi dispiace, codice sconto non valido."); 
+buttonColor = "btn-danger"
 
 }
+
+
+document.getElementById("button-container").innerHTML =
+`<button class="btn ${buttonColor} btn-lg" id="submitButton" type="submit">Send</button>`
 
 return finalPrice.toFixed(2); 
 
 }
-
-
-document.getElementById("price").innerHTML = finalPrice; 
-
-
 }
