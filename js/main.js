@@ -53,7 +53,6 @@ document.getElementById("price").innerHTML = finalPrice;
 
 
 
-
 //funzione per calcolare prezzo finale, considerando se utente ha applicato coupon o meno 
 function getFinalPrice()
 {
@@ -77,14 +76,14 @@ if(discountCodes[i] == userDiscountCode)
 
   finalPrice = finalPrice*codeDiscount; 
   discountCodes.splice(i,1); 
-  console.log("Il codice sconto "+userDiscountCode+" non sarà più utilizzabile"); 
+  document.getElementById("code-validation").innerHTML = `Il codice sconto ${userDiscountCode} non sarà più riutilizzabile`; 
   break; 
 
 }
 }
 
 if(!isAValidDiscountCode){
-console.log("Mi dispiace, codice sconto non valido."); 
+document.getElementById("code-validation").innerHTML = `Codice sconto non valido`; 
 buttonColor = "btn-danger"
 }
 
