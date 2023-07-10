@@ -48,7 +48,9 @@ let userDiscountCode = document.getElementById("discount-code").value;
 finalPrice = getFinalPrice(); 
 console.log("Il prezzo finale è: "+finalPrice); 
 
-document.getElementById("price").innerHTML = finalPrice; 
+document.getElementById("price").innerHTML = `${finalPrice} €`; 
+
+
 
 
 
@@ -74,7 +76,7 @@ if(discountCodes[i] == userDiscountCode)
     isAValidDiscountCode = true; 
     console.log("Sconto applicato"); 
 
-  finalPrice = finalPrice*codeDiscount; 
+  finalPrice = finalPrice-(finalPrice*codeDiscount); 
   discountCodes.splice(i,1); 
   document.getElementById("code-validation").innerHTML = `Il codice sconto ${userDiscountCode} non sarà più riutilizzabile`; 
   break; 
