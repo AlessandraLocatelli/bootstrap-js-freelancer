@@ -38,14 +38,11 @@ let codeDiscount = 0.25;
 
 
 //reperisco dati inseriti dall'utente nel form e assegno valori a delle variabili da me create 
-let userName = document.getElementById("first-name").value; 
-let userLastName = document.getElementById("name").value;
-let userEmail = document.getElementById("email").value;
-let userWorkingHours = document.getElementById("hours").value;
-let typeOfWorkSelector = document.getElementById("type-of-work"); 
-let typeOfWorkUserSelected = typeOfWorkSelector.value; 
+
+let userWorkingHours = parseInt(document.getElementById("hours").value);
+let typeOfWorkUserSelected = parseInt(document.getElementById("type-of-work").value); 
 let userDiscountCode = document.getElementById("discount-code").value;
-let userMessage = document.getElementById("message").value; 
+
 
 //ricavo prezzo finale dalla funzione
 finalPrice = getFinalPrice(); 
@@ -61,7 +58,7 @@ document.getElementById("price").innerHTML = finalPrice;
 function getFinalPrice()
 {
 
-let isAValidDiscountCode = discountCodes.includes(userDiscountCode);
+let isAValidDiscountCode = false;
 let buttonColor = "btn-warning"
 
 if(typeOfWorkUserSelected == "1")
@@ -72,23 +69,24 @@ if(typeOfWorkUserSelected == "1")
     finalPrice = priceProjectAnalysisPerHour*userWorkingHours; 
 
 
-
-if(isAValidDiscountCode)
+for(let i = 0; i < discountCodes.length; i++){
+if(discountCodes[i] == userDiscountCode)
 {
+    isAValidDiscountCode = true; 
     console.log("Sconto applicato"); 
 
   finalPrice = finalPrice*codeDiscount; 
-
+  discountCodes.splice(i,1); 
+  console.log("Il codice sconto "+userDiscountCode+" non sarà più utilizzabile"); 
+  break; 
 
 }
-else
-{
+}
 
+if(!isAValidDiscountCode){
 console.log("Mi dispiace, codice sconto non valido."); 
 buttonColor = "btn-danger"
-
 }
-
 
 document.getElementById("button-container").innerHTML =
 `<button class="btn ${buttonColor} btn-lg" id="submitButton" type="submit">Send</button>`
