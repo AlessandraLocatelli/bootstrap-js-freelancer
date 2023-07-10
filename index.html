@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+  <link rel="icon" href="favicon.ico" />
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <!-- inizio navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-info" href="#">Portfolio</a>
+      <a class="text-info text-uppercase" href="#contact">Contact me</a>
+    </div>
+  </nav>
+  <!-- fine navbar -->
+  <!-- inizio header -->
+  <header>
+    <div class="p-5 mb-4 bg-info bg-gradient">
+      <div class="row align-items-center justify-content-center">
+        <div class="text-center col-6 col-md-4">
+          <img class="img-fluid" alt="profile pic" src="img/undraw_profile_pic_ic5t.svg">
+          <h1>Pinco Pallo</h1>
+          <p class="mb-4 text-uppercase">
+            Web Designer
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- fine header -->
+  <!-- inizio main -->
+  <main>
+    <!-- inizio section portfolio -->
+    <section id="portfolio" class="mb-5">
+      <div class="container">
+        <h2 class="text-center text-uppercase mb-3">Portfolio</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+              <img class="card-img-top" src="img/portfolio/cabin.png" alt="cabin">
+              <div class="card-body text-center">
+                <h5>Cabin Website</h5>
+                <a href="#" class="card-link btn btn-info">Preview</a>
+                <a href="#" class="card-link btn btn-outline-info">Visit site</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+              <img class="card-img-top" src="img/portfolio/cake.png" alt="cake">
+              <div class="card-body text-center">
+                <h5>Cake Website</h5>
+                <a href="#" class="card-link btn btn-info">Preview</a>
+                <a href="#" class="card-link btn btn-outline-info">Visit site</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+              <img class="card-img-top" src="img/portfolio/circus.png" alt="circus">
+              <div class="card-body text-center">
+                <h5>Circus Website</h5>
+                <a href="#" class="card-link btn btn-info">Preview</a>
+                <a href="#" class="card-link btn btn-outline-info">Visit site</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+              <img class="card-img-top" src="img/portfolio/game.png" alt="game">
+              <div class="card-body text-center">
+                <h5>Game Website</h5>
+                <a href="#" class="card-link btn btn-info">Preview</a>
+                <a href="#" class="card-link btn btn-outline-info">Visit site</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+              <img class="card-img-top" src="img/portfolio/safe.png" alt="safe">
+              <div class="card-body text-center">
+                <h5>Safe Website</h5>
+                <a href="#" class="card-link btn btn-info">Preview</a>
+                <a href="#" class="card-link btn btn-outline-info">Visit site</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+              <img class="card-img-top" src="img/portfolio/submarine.png" alt="submarine">
+              <div class="card-body text-center">
+                <h5>Submarine Website</h5>
+                <a href="#" class="card-link btn btn-info">Preview</a>
+                <a href="#" class="card-link btn btn-outline-info">Visit site</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- fine section portfolio -->
+    <!-- inizio section offer-->
+    <section id="offer" class="bg-info">
+      <div class="container p-4">
+        <h2 class="text-center text-uppercase">Want an offer?</h2>
+        <form id="offerForm" class="row gy-2 my-3" onsubmit="submitForm(event)">
+          <!-- First name input-->
+          <div class="col-sm-6 col-12">
+            <label class="form-label" for="first-name">First name</label>
+            <input class="form-control" id="first-name" type="text" placeholder="Enter your first name..." required />
+          </div>
+          <!-- Last name input -->
+          <div class="col-sm-6 col-12">
+            <label class="form-label" for="name">Last name</label>
+            <input class="form-control" id="name" type="text" placeholder="Enter your last name..." required />
+          </div>
+          <!-- Email address input-->
+          <div class="col-sm-6 col-12">
+            <label class="form-label" for="email">Email address</label>
+            <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+          </div>
+          <!-- Phone number input-->
+          <div class="col-sm-6 col-12">
+            <label class="form-label" for="hours">Hours requested</label>
+            <input class="form-control" id="hours" type="text" placeholder="Hours requested..." />
+          </div>
+          <!-- Type of offer-->
+          <div class="col-sm-6 col-12">
+            <label class="form-label" for="type-of-work">Type of work</label>
+            <select class="form-select" id="type-of-work">
+              <option selected>Select the type of work</option>
+              <option value="1">Backend Development</option>
+              <option value="2">Frontend Development</option>
+              <option value="3">Project Analysis</option>
+            </select>
+          </div>
+          <!-- Discount Code-->
+          <div class="col-sm-6 col-12">
+            <label class="form-label" for="discount-code">Discount Code</label>
+            <input class="form-control" id="discount-code" type="text" />
+          </div>
+          <!-- Message input-->
+          <div class="col-12">
+            <label class="form-label" for="message">Message</label>
+            <textarea rows="5" class="form-control" id="message" placeholder="Specify your work commission..."
+              required></textarea>
+          </div>
+          <div class="col-12 text-center mt-4">
+            <button class="btn btn-warning btn-lg" id="submitButton" type="submit">Send</button>
+          </div>
+
+          <div class="col-12">
+            <h3 id="price"></h3>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- fine section offer-->
+  </main>
+  <!-- fine main -->
+  <!-- inizio footer -->
+  <footer class="footer bg-dark text-center text-secondary pt-5">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Location-->
+        <div class="col-md-12 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Location</h4>
+          <p class="lead mb-0">
+            2215 John Daniel Drive
+            <br />
+            Clark, MO 65243
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright Section-->
+    <div class="py-4 text-secondary bg-dark text-center">
+      <small>Copyright &copy; Your Website 2021</small>
+    </div>
+  </footer>
+  <!-- fine footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./js/main.js"></script>
+
+
+</body>
+
+</html>
